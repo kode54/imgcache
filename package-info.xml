@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "http://www.elkarte.net/site/package-info">
+<package-info xmlns="http://www.elkarte.net/site/package-info" xmlns:elk="http://www.elkarte.net/">
+	<license><![CDATA[
+/**
+ * Images cache
+ *
+ * @name      Images cache
+ * @copyright Images cache contributors
+ * @license   BSD http://opensource.org/licenses/BSD-3-Clause
+ *
+ * @version 0.1
+ *
+ */
+	]]></license>
+	<id>emanuele:imgcache</id>
+	<name>Images cache</name>
+	<version>0.1</version>
+	<type>modification</type>
+	<install for="1.0 RC1 - 1.0.99">
+		<require-file name="imgcache.integrate.php" destination="SUBSDIR" />
+		<require-file name="imgcache.js" destination="THEMEDIR/scripts" />
+		<require-file name="imgcache.css" destination="THEMEDIR/css" />
+		<hook hook="integrate_load_theme" file="SUBSDIR/imgcache.integrate.php" function="imgcache_integrate_loadCss" />
+		<hook hook="integrate_bbc_codes" file="SUBSDIR/imgcache.integrate.php" function="imgcache_integrate_loadBBC" />
+	</install>
+	<uninstall for="1.0 RC1 - 1.0.99">
+		<remove-file name="SUBSDIR/imgcache.integrate.php" />
+		<remove-file name="THEMEDIR/scripts/imgcache.js" />
+		<remove-file name="THEMEDIR/css/imgcache.css" />
+		<hook reverse="true" hook="integrate_load_theme" file="SUBSDIR/imgcache.integrate.php" function="imgcache_integrate_loadCss" />
+		<hook reverse="true" hook="integrate_bbc_codes" file="SUBSDIR/imgcache.integrate.php" function="imgcache_integrate_loadBBC" />
+	</uninstall>
+</package-info>
