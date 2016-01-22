@@ -19,7 +19,7 @@ function imageNeedsCache($img)
 	$parseboard = parse_url($boardurl);
 	$parseimg = parse_url($img);
 
-	if (!($parseboard['scheme'] === 'http' || $parseboard['scheme'] === $parseimg['scheme']))
+	if (!($parseboard['scheme'] === 'https') || ($parseboard['scheme'] === $parseimg['scheme']))
 		return false;
 
 	if ($js_loaded === false)
