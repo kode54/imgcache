@@ -20,6 +20,7 @@
 	<install for="1.0 RC1 - 1.0.99">
 		<require-file name="imgcache.integrate.php" destination="SUBSDIR" />
 		<require-file name="imgcache.php" destination="BOARDDIR" />
+		<require-file name="imgcache.english.php" destination="LANGUAGEDIR/english" />
 		<require-file name="imgcache.js" destination="THEMEDIR/scripts" />
 		<require-file name="imgcache.css" destination="THEMEDIR/css" />
 		<hook hook="integrate_load_theme" file="SUBSDIR/imgcache.integrate.php" function="imgcache_integrate_loadCss" />
@@ -28,6 +29,7 @@
 	<uninstall for="1.0 RC1 - 1.0.99">
 		<remove-file name="SUBSDIR/imgcache.integrate.php" />
 		<remove-file name="BOARDDIR/imgcache.php" />
+		<remove-file name="LANGUAGEDIR/english/imgcache.english.php" />
 		<remove-file name="THEMEDIR/scripts/imgcache.js" />
 		<remove-file name="THEMEDIR/css/imgcache.css" />
 		<hook reverse="true" hook="integrate_load_theme" file="SUBSDIR/imgcache.integrate.php" function="imgcache_integrate_loadCss" />
